@@ -1,0 +1,19 @@
+<h2>Appliances#show</h2>
+<%= render partial: "nav" %>
+<br>
+<img src='<%= @appliance.image %>'>
+<br>
+<%= @appliance.name %>
+<br>
+<%= @appliance.description %>
+<br>
+Owner: 
+<br>
+Availability: <%= @appliance.availability %>
+<br>
+
+ <%= link_to '<button type="button">Borrow</button>'.html_safe, appliances_path %>
+
+<br>
+<br>
+<br>
