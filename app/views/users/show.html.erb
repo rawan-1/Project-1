@@ -1,8 +1,25 @@
 
-<h2> Users#show</h2>
+<% if user_signed_in? %>
 
-<% @users.each do |user| %>
-<p>
-<%=  user.email %>
-</p>
-<%end  %>
+    <% if current_user.is_customer %>
+Signed in as customer <br> <br>
+<%= current_user.name %> <br>
+<%= current_user.email %> <br>
+<%= current_user.location %>
+    <% end %>
+
+    <% if current_user.is_provider %>
+  
+
+Signed in as Provider <br> <br>
+<%= current_user.name %> <br>
+<%= current_user.email %> <br>
+<%= current_user.location %>
+<br>
+<br>
+<br>
+
+  <%= render partial: "form" %>
+    <% end %>
+
+<% end %>

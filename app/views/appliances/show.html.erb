@@ -7,9 +7,9 @@
 <br>
 <%= @appliance.description %>
 <br>
-Owner: 
+Owner: <%= link_to @appliance.provider.name, user_path %>
 <br>
-Availability: <%= @appliance.availability %>
+<%# Availability: <%= @appliance.availability %> 
 <br>
 
  <%= link_to '<button type="button">Borrow</button>'.html_safe, appliances_path %>

@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2018_11_08_062600) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "location"
+    t.string "user_type"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

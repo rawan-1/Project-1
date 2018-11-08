@@ -1,8 +1,10 @@
 <h2>Appliance#index</h2>
 
 <% @appliances.each do |appliance| %>
-<%# <img src='<%= appliance.image %>
-<%= link_to appliance.image, appliance_path(appliance) %>
+
+<%= link_to appliance_path(appliance) do %>
+    <%= image_tag appliance.image %>
+<% end %>
 <br>
 <br>
 <br>
