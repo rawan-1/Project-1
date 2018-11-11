@@ -4,9 +4,5 @@ class UsersController < ApplicationController
   end
 
   def show
-    @appliance = Appliance.new
-  end
-
-  def edit
   end
 end

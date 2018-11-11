@@ -7,6 +7,13 @@ class AppliancesController < ApplicationController
     @appliance = Appliance.find_by(id: params[:id])
   end
 
+  def borrow
+    @appliance = Appliance.find_by(id: params[:id])
+    @appliance.customer_id = current_user.id
+    @appliance.save
+    redirect_to appliances_path
+  end
+
   def new
     @appliance = Appliance.new
   end

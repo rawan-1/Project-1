@@ -2,24 +2,41 @@
 <% if user_signed_in? %>
 
     <% if current_user.is_customer %>
-Signed in as customer <br> <br>
-<%= current_user.name %> <br>
-<%= current_user.email %> <br>
-<%= current_user.location %>
+        Signed in as customer <br> <br>
+        <%= current_user.name %> <br>
+        <%= current_user.email %> <br>
+        <%= current_user.location %> <br> <br>
+
+        <h2>Borrowed Appliances</h2> <br>
+
+         <% current_user.appliances.each do |appliance| %>
+                    <%= link_to appliance_path(appliance) do %>
+                        <%= image_tag appliance.image  %>
+                    <% end %> 
+                    <%= link_to 'Edit', "/appliances/#{appliance.id}/edit" %>
+                        
+
+            <%end %>
+            
     <% end %>
 
     <% if current_user.is_provider %>
-  
+            Signed in as Provider <br> <br>
+            <%= current_user.name %> <br>
+            <%= current_user.email %> <br>
+            <%= current_user.location %>
+            <br>
+            <br>
+            <%= link_to '<button type="button">New Appliance</button>'.html_safe, new_appliance_path %> <br> <br>
+            <% current_user.appliances.each do |appliance| %>
+                    <%= link_to appliance_path(appliance) do %>
+                        <%= image_tag appliance.image %>
+                    <% end %> 
+            <%end %>
 
-Signed in as Provider <br> <br>
-<%= current_user.name %> <br>
-<%= current_user.email %> <br>
-<%= current_user.location %>
-<br>
-<br>
-<br>
-
-  <%= render partial: "form" %>
-    <% end %>
+    <%end %>
 
 <% end %>
+
+
+

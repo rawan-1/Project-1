@@ -2,11 +2,11 @@
 
 <% @appliances.each do |appliance| %>
 
-<%= link_to appliance_path(appliance) do %>
-    <%= image_tag appliance.image %>
-<% end %>
-<br>
-<br>
-<br>
+    <%= link_to appliance_path(appliance) do %>
+        <%= image_tag appliance.image %>
+    <% end %>
+    <br>
+    <br>
+    <br>
 
 <%end %>
