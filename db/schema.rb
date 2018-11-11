@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2018_11_08_062600) do
     t.string "name"
     t.string "image"
     t.string "description"
-    t.boolean "availability"
+    t.string "availability"
     t.integer "customer_id"
     t.integer "provider_id"
     t.datetime "created_at", null: false

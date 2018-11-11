@@ -1,20 +1,22 @@
 <h2>Appliances#show</h2>
-<%= render partial: "nav" %>
-<br>
-<img src='<%= @appliance.image %>'>
-<br>
-<%= @appliance.name %>
-<br>
-<%= @appliance.description %>
-<br>
-Owner: <%= link_to @appliance.provider.name, user_path %>
-<br>
-<%# Availability: <%= @appliance.availability %> 
-<br>
+<%= render partial: "nav" %><br>
+
+<img src='<%= @appliance.image %>'><br>
+<%= @appliance.name %><br>
+<%= @appliance.description %><br>
+Owner: <%= link_to @appliance.provider.name, user_path(@appliance.provider) %><br>
+Availability: <%= @appliance.availability %> <br>
+
 <% if current_user.is_customer %>
- <%= link_to '<button type="button">Borrow</button>'.html_safe, "/appliances/#{params[:id]}/borrow" %>
-<br>
+    <%= link_to '<button type="button">Borrow</button>'.html_safe, "/appliances/#{params[:id]}/borrow" %>
+    <br>
 <%end %>
+
+<%if current_user.is_provider %>
+    <%= link_to 'Edit', "/appliances/#{@appliance.id}/edit" %>
+    <%= link_to 'Remove', "/appliances/#{@appliance.id}", method: "delete" %>
+<%end %>
+
 <%# Click the link (we remember the appliance id using params)
 The routes file tells us to run the appliances controller borrow method
 Update the customer_id to show whoever is logged in

@@ -4,7 +4,7 @@ class CreateAppliances < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :image
       t.string :description
-      t.boolean :availability
+      t.string :availability
       t.integer :customer_id
       t.integer :provider_id
 
