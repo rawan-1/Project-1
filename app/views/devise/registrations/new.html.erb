@@ -36,6 +36,11 @@
     <%= f.select :user_type, ["Provider", "Customer"] %>
   </div>
 
+  <div>
+  <%= f.label "Image" %>
+  <%= f.file_field :image %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

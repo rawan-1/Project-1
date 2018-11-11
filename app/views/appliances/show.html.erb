@@ -8,6 +8,7 @@ Owner: <%= link_to @appliance.provider.name, user_path(@appliance.provider) %><b
 Availability: <%= @appliance.availability %> <br>
 
 <% if current_user.is_customer %>
+
     <%= link_to '<button type="button">Borrow</button>'.html_safe, "/appliances/#{params[:id]}/borrow" %>
     <br>
 <%end %>
@@ -21,3 +22,4 @@ Availability: <%= @appliance.availability %> <br>
 The routes file tells us to run the appliances controller borrow method
 Update the customer_id to show whoever is logged in
 Go to see the list of all appliances %>
+
