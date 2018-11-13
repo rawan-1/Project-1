@@ -33,6 +33,7 @@ body {
 h2 {
   color: rgb(128, 128, 128);
   font-size: 40px;
+  font-family: "Kurale", serif;
 }
 h3 {
   color: rgb(128, 128, 128);
@@ -60,4 +61,35 @@ nav {
 
 .sign {
   margin-left: 80px;
+}
+
+.det {
+  font-family: "Kurale", serif;
+  font-size: 20px;
+  color: #01579b;
+}
+.tit-fon {
+  font-family: "Kurale", serif;
+  color: #01579b;
+}
+.tit-fo {
+  font-family: "Kurale", serif;
+  color: #c62828;
+}
+.cc {
+  font-family: "Kurale", serif;
+  color: #01579b;
+  font-size: 25px;
+}
+.ct {
+  font-family: "Kurale", serif;
+  color: #c62828;
+}
+.cd {
+  font-family: "Kurale", serif;
+  color: #01579b;
+}
+.cli {
+  font-family: "Kurale", serif;
+  font-size: 20px;
 }

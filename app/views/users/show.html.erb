@@ -3,13 +3,13 @@
         <div class="row ">
             <div class=" card col s12 m10 #e0f7fa cyan lighten-5 ">
                 <div class="card-content">
-                <span class="card-title "><%= @user.name %></span>
-                <p>Email: <%= @user.email %> </p>
-                <p>Location:  <%= @user.location %> </p>
+                <span class="card-title tit-fon"><%= @user.name %></span>
+                <p class="det">Email: <%= @user.email %> </p>
+                <p class="det">Location:  <%= @user.location %> </p>
             </div>
         </div>
 
-        <h4 class="col row s12 ">Borrowed Appliances</h4> <br>
+        <h4 class="col row s12 tit-fo">Borrowed Appliances</h4> <br>
         <div class="col row "> 
          <% @user.appliances.each do |appliance| %>
                     <%= link_to appliance_path(appliance) do %>
@@ -24,17 +24,17 @@
         <div class="row ">
             <div class=" card col s12 m10 #e0f7fa cyan lighten-5 ">
                 <div class="card-content">
-                <span class="card-title "><%= @user.name %></span>
-                <p>Email: <%= @user.email %> </p>
-                <p>Location:  <%= @user.location %> </p>
+                <span class="card-title tit-fon"><%= @user.name %></span>
+                <p class="det">Email: <%= @user.email %> </p>
+                <p class="det">Location:  <%= @user.location %> </p>
             </div>
             
-            <div class="card-action"> 
+            <div class="card-action cli"> 
                 <%= link_to 'New Appliance', new_appliance_path %>
             </div> 
         </div>
             
-         <h4 class="col row s12 ">My Appliances</h4> 
+         <h4 class="col row s12 tit-fo">My Appliances</h4> 
         <div class="col row "> <br>
             <% @user.provided_appliances.each do |appliance| %>
                 <%= link_to appliance_path(appliance) do %>
