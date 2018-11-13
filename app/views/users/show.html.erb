@@ -29,20 +29,19 @@
                 <p>Location:  <%= @user.location %> </p>
             </div>
             
-               <div class="card-action"> 
-                    <%= link_to 'New Appliance', new_appliance_path %>
-                </div> 
+            <div class="card-action"> 
+                <%= link_to 'New Appliance', new_appliance_path %>
+            </div> 
         </div>
             
-            <h4 class="col row s12 ">My Appliances</h4> 
-            <div class="col row "> <br>
-                <% @user.provided_appliances.each do |appliance| %>
-                        <%= link_to appliance_path(appliance) do %>
-                            <%= image_tag appliance.image %>
-                        <% end %> 
-                        
-                <%end %>
-            </div>
+         <h4 class="col row s12 ">My Appliances</h4> 
+        <div class="col row "> <br>
+            <% @user.provided_appliances.each do |appliance| %>
+                <%= link_to appliance_path(appliance) do %>
+                    <%= image_tag appliance.image %>
+                <% end %>  
+            <%end %>
+        </div>
     <%end %>
 
 

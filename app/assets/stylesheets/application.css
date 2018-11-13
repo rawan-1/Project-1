@@ -45,28 +45,6 @@ nav {
   line-height: 80px;
 }
 
-/* .card {
-  display: flex;
-} */
-img {
-  /* display: block;
-  margin-left: 70px;
-  padding-bottom: 30px;
-  margin-right: auto;  */
-  /* height: 400px;
-  width: 100px; */
-}
-
-.details {
-  /* text-align: center; */
-  margin-left: 60px;
-  padding-bottom: 20px;
-}
-
-.borrow-btn {
-  margin-left: 70px;
-  padding-bottom: 20px;
-}
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
   position: relative;
@@ -74,28 +52,12 @@ img {
   pointer-events: none;
 }
 
-/* .user-det {
-  margin: auto;
-  width: 50%;
-  border: 1px solid #000000;
-  padding: 10px;
-} */
-.new-app {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .links {
   margin-top: 30px;
-  margin-left: 190px;
+  margin-left: 130px;
   margin-bottom: 30px;
 }
 
 .sign {
   margin-left: 80px;
-}
-
-.edi-rem {
-  margin-left: 30px;
 }

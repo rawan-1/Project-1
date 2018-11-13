@@ -33,34 +33,7 @@
     </div>
 </div>
 
-<%#<div class="image"> 
-    <img src='<%= @appliance.image '>
-</div>%>
 
-<%# <div class="details"> 
-    <%= @appliance.name <br>
-    <%= @appliance.description <br>
-    Owner: <%= link_to @appliance.provider.name, user_path(@appliance.provider) <br>
-    Availability: <%= @appliance.availability  <br>
-</div> %>
-
-<%# If the current user is a customer and the current appliance is available, show the button. 
-Otherwise, the button won't be on the page %>
-<%#<div class="borrow-btn"> 
-
-    <% if user_signed_in? && current_user.is_customer && @appliance.availability == "Available" %>
-        <%#= link_to '<button type="button" class="waves-effect waves-teal">Borrow</button>'.html_safe, "/appliances/#{params[:id]}/borrow" %>
-       
-
-    <%#end 
-</div>
-
-<div class="edi-rem">  
-    <%if user_signed_in? && current_user.is_provider && current_user.id == @appliance.provider_id %>
-        <%#= link_to '<button type="button" class="waves-effect waves-teal">Edit</button>'.html_safe, "/appliances/#{@appliance.id}/edit" %>
-        <%#= link_to '<button type="button" class="waves-effect waves-teal">Remove</button>'.html_safe, "/appliances/#{@appliance.id}", method: "delete" %>
-    <%#end 
-</div>%>
 <%# Click the link (we remember the appliance id using params)
 The routes file tells us to run the appliances controller borrow method
 Update the customer_id to show whoever is logged in
