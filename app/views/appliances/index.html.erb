@@ -1,12 +1,19 @@
-<h2>Appliance#index</h2>
+<%# <h3>Appliances</h3> %>
 
-<% @appliances.each do |appliance| %>
+<div class="appliance row"> 
+    <% @appliances.each do |appliance| %>
+        <div class="col s4">
+            <div class="card ">
+                <div class="card-image">
+                        <%= link_to appliance_path(appliance) do %>
+                            <%= image_tag appliance.image %>
+                        <% end %>
+                    <div class="card-content">
+                       <%#   <p><%= @appliance.name %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <%end %>
+</div>
 
-    <%= link_to appliance_path(appliance) do %>
-        <%= image_tag appliance.image %>
-    <% end %>
-    <br>
-    <br>
-    <br>
-
-<%end %>

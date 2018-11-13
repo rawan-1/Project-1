@@ -1,23 +1,66 @@
-<h2>Appliances#show</h2>
-<%= render partial: "nav" %><br>
+  <div class="row">
+    <div class="col s12 m4 offset-m4">
 
-<img src='<%= @appliance.image %>'><br>
-<%= @appliance.name %><br>
-<%= @appliance.description %><br>
-Owner: <%= link_to @appliance.provider.name, user_path(@appliance.provider) %><br>
-Availability: <%= @appliance.availability %> <br>
+    <div class="card sticky-action">
+        <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src='<%= @appliance.image %>'>
+        </div>
 
-<% if current_user.is_customer %>
+        <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><%= @appliance.name %></span>
+        </div>
 
-    <%= link_to '<button type="button">Borrow</button>'.html_safe, "/appliances/#{params[:id]}/borrow" %>
-    <br>
-<%end %>
+        <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4"><%= @appliance.name %><i class="material-icons right">close</i></span>
+        <p><%= @appliance.description %></p>
+        <p>Owner: <%= link_to @appliance.provider.name, user_path(@appliance.provider) %></p>
+        <p>Availability: <%= @appliance.availability %></p>
+        </div>
 
-<%if current_user.is_provider %>
-    <%= link_to 'Edit', "/appliances/#{@appliance.id}/edit" %>
-    <%= link_to 'Remove', "/appliances/#{@appliance.id}", method: "delete" %>
-<%end %>
+        <div class="card-action">
+            <% if user_signed_in? && current_user.is_customer && @appliance.availability == "Available" %>
+                <%= link_to 'Borrow', "/appliances/#{params[:id]}/borrow" %>
+            <%end %>
 
+            <%if user_signed_in? && current_user.is_provider && current_user.id == @appliance.provider_id %>
+                <%= link_to 'Edit', "/appliances/#{@appliance.id}/edit" %>
+                <%= link_to 'Remove', "/appliances/#{@appliance.id}", method: "delete" %>
+            <%end %>
+        </div>
+
+    </div>
+
+    </div>
+</div>
+
+<%#<div class="image"> 
+    <img src='<%= @appliance.image '>
+</div>%>
+
+<%# <div class="details"> 
+    <%= @appliance.name <br>
+    <%= @appliance.description <br>
+    Owner: <%= link_to @appliance.provider.name, user_path(@appliance.provider) <br>
+    Availability: <%= @appliance.availability  <br>
+</div> %>
+
+<%# If the current user is a customer and the current appliance is available, show the button. 
+Otherwise, the button won't be on the page %>
+<%#<div class="borrow-btn"> 
+
+    <% if user_signed_in? && current_user.is_customer && @appliance.availability == "Available" %>
+        <%#= link_to '<button type="button" class="waves-effect waves-teal">Borrow</button>'.html_safe, "/appliances/#{params[:id]}/borrow" %>
+       
+
+    <%#end 
+</div>
+
+<div class="edi-rem">  
+    <%if user_signed_in? && current_user.is_provider && current_user.id == @appliance.provider_id %>
+        <%#= link_to '<button type="button" class="waves-effect waves-teal">Edit</button>'.html_safe, "/appliances/#{@appliance.id}/edit" %>
+        <%#= link_to '<button type="button" class="waves-effect waves-teal">Remove</button>'.html_safe, "/appliances/#{@appliance.id}", method: "delete" %>
+    <%#end 
+</div>%>
 <%# Click the link (we remember the appliance id using params)
 The routes file tells us to run the appliances controller borrow method
 Update the customer_id to show whoever is logged in

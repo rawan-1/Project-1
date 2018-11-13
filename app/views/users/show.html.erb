@@ -1,36 +1,53 @@
     <% if @user.is_customer %>
-        Signed in as customer <br> <br>
-        <%= @user.name %> <br>
-        <%= @user.email %> <br>
-        <%= @user.location %> <br> <br>
 
-        <h2>Borrowed Appliances</h2> <br>
+        <div class="row ">
+            <div class=" card col s12 m7 #e0f7fa cyan lighten-5 ">
+                <div class="card-content">
+                <span class="card-title "><%= @user.name %></span>
+                <p>Email: <%= @user.email %> </p>
+                <p>Location:  <%= @user.location %> </p>
+            </div>
+        </div>
 
+       <%#  <div class="user-det center">
+            <%= @user.name  <br>
+            <%= @user.email  <br>
+            <%= @user.location  <br> <br>
+        </div> %>
+
+        <h4 class="row">Borrowed Appliances</h4> <br>
+        <div class="row "> 
          <% @user.appliances.each do |appliance| %>
                     <%= link_to appliance_path(appliance) do %>
                         <%= image_tag appliance.image  %>
                     <% end %> 
 
             <%end %>
-            
+        </div>
     <% end %>
 
     <% if @user.is_provider %>
-            Signed in as Provider <br> <br>
-            <%= @user.name %> <br>
-            <%= @user.email %> <br>
-            <%= @user.location %><br><br>
-            <%= link_to '<button type="button">New Appliance</button>'.html_safe, new_appliance_path %> <br> <br>
-            <% @user.appliances.each do |appliance| %>
-                    <%= link_to appliance_path(appliance) do %>
-                        <%= image_tag appliance.image %>
-                    <% end %> 
-                    
-            <%end %>
-
+            <div class="user-det center">
+                <%= @user.name %> <br>
+                <%= @user.email %> <br>
+                <%= @user.location %><br><br>
+            </div>
+            <div class="new-app "> 
+                <%= link_to '<button type="button" >New Appliance</button>'.html_safe, new_appliance_path %> <br> <br>
+            </div>
+            <div class="pro-img row center"> 
+                <% @user.provided_appliances.each do |appliance| %>
+                        <%= link_to appliance_path(appliance) do %>
+                            <%= image_tag appliance.image %>
+                        <% end %> 
+                        
+                <%end %>
+            </div>
     <%end %>
 
 
 
 
 
+
+        
