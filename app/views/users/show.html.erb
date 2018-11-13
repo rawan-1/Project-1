@@ -10,12 +10,17 @@
         </div>
 
         <h4 class="col row s12 tit-fo">Borrowed Appliances</h4> <br>
-        <div class="col row "> 
-         <% @user.appliances.each do |appliance| %>
-                    <%= link_to appliance_path(appliance) do %>
-                        <%= image_tag appliance.image  %>
-                    <% end %> 
-
+        <div class="row"> 
+            <% @user.appliances.each do |appliance| %>
+                <div class="col s4 ">
+                    <div class="card ">
+                        <div class="card-image">
+                            <%= link_to appliance_path(appliance) do %>
+                                <%= image_tag appliance.image %>
+                            <% end %> 
+                        </div>
+                    </div>
+                </div>
             <%end %>
         </div>
     <% end %>
@@ -28,20 +33,29 @@
                 <p class="det">Email: <%= @user.email %> </p>
                 <p class="det">Location:  <%= @user.location %> </p>
             </div>
-            
+            <% if user_signed_in? && current_user.is_provider %>
             <div class="card-action cli"> 
                 <%= link_to 'New Appliance', new_appliance_path %>
             </div> 
+            <%end %>
         </div>
             
          <h4 class="col row s12 tit-fo">My Appliances</h4> 
-        <div class="col row "> <br>
+
+        <div class="row"> 
             <% @user.provided_appliances.each do |appliance| %>
-                <%= link_to appliance_path(appliance) do %>
-                    <%= image_tag appliance.image %>
-                <% end %>  
+                <div class="col s4 ">
+                    <div class="card ">
+                        <div class="card-image">
+                            <%= link_to appliance_path(appliance) do %>
+                                <%= image_tag appliance.image %>
+                            <% end %> 
+                        </div>
+                    </div>
+                </div>
             <%end %>
         </div>
+        
     <%end %>
 
 
@@ -49,4 +63,5 @@
 
 
 
-        
+
+
