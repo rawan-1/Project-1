@@ -1,24 +1,21 @@
-# README
+# Full-Stack Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Used Techniques:
 
-Things you may want to cover:
+- HTML
+- CSS
+- Ruby on Rails
+- Materialize
 
-* Ruby version
+## Link:
 
-* System dependencies
+[Borrow Me](https://dry-headland-93024.herokuapp.com/)
 
-* Configuration
+## Future Features:
 
-* Database creation
+I will add Rating to let provider rate the customer depending on his use of device.
 
-* Database initialization
+## Credits:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Jack
+- Moath
